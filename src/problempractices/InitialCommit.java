@@ -193,50 +193,50 @@ public class InitialCommit {
 	        
 	    }
 		
-		public static void main(String[] args) {
-//			int[] testArray = new int[] {3,2,4};
-//			//twoSum(testArray, 6);
-//			int[] testArray2 = new int[] {0,4,3,0};
-//			int[] testArray3 = twoSum(testArray, 6);
-//			for(int i = 0; i < testArray3.length; i++){
-//				System.out.println(testArray3[i]);
-//			}
-			
-//			ListNode l1 = new ListNode(2);
-//			l1.next = new ListNode(4);
-//			l1.next.next = new ListNode(3);
-//			ListNode l2 = new ListNode(5);
-//			l2.next = new ListNode(6);
-//			l2.next.next = new ListNode(4);
+//		public static void main(String[] args) {
+////			int[] testArray = new int[] {3,2,4};
+////			//twoSum(testArray, 6);
+////			int[] testArray2 = new int[] {0,4,3,0};
+////			int[] testArray3 = twoSum(testArray, 6);
+////			for(int i = 0; i < testArray3.length; i++){
+////				System.out.println(testArray3[i]);
+////			}
 //			
-////			ListNode l1 = new ListNode(1);
-////			l1.next = new ListNode(8);
-////			ListNode l2 = new ListNode(0);
-//			
-////			ListNode l1 = new ListNode(5);
+////			ListNode l1 = new ListNode(2);
+////			l1.next = new ListNode(4);
+////			l1.next.next = new ListNode(3);
 ////			ListNode l2 = new ListNode(5);
+////			l2.next = new ListNode(6);
+////			l2.next.next = new ListNode(4);
+////			
+//////			ListNode l1 = new ListNode(1);
+//////			l1.next = new ListNode(8);
+//////			ListNode l2 = new ListNode(0);
+////			
+//////			ListNode l1 = new ListNode(5);
+//////			ListNode l2 = new ListNode(5);
+////			
+//////			ListNode l1 = new ListNode(3);
+//////			l1.next = new ListNode(7);
+//////			ListNode l2 = new ListNode(9);
+//////			l2.next = new ListNode(2);
+////			
+////			ListNode answer = addTwoNumbers(l1, l2);
+////			while(answer != null){
+////				System.out.println(answer.val);
+////				answer = answer.next;
+////			}
 //			
-////			ListNode l1 = new ListNode(3);
-////			l1.next = new ListNode(7);
-////			ListNode l2 = new ListNode(9);
-////			l2.next = new ListNode(2);
+//			//System.out.println(lengthOfLongestSubstring("abcabcbb"));
+//			System.out.println(lengthOfLongestSubstring("pwwkew"));
+//			System.out.println(lengthOfLongestSubstring("abcabcbb"));
+//			System.out.println(lengthOfLongestSubstring("aab"));
+//			System.out.println(lengthOfLongestSubstring("dvdf"));
+//			System.out.println(lengthOfLongestSubstring("asjrgapa"));
 //			
-//			ListNode answer = addTwoNumbers(l1, l2);
-//			while(answer != null){
-//				System.out.println(answer.val);
-//				answer = answer.next;
-//			}
-			
-			//System.out.println(lengthOfLongestSubstring("abcabcbb"));
-			System.out.println(lengthOfLongestSubstring("pwwkew"));
-			System.out.println(lengthOfLongestSubstring("abcabcbb"));
-			System.out.println(lengthOfLongestSubstring("aab"));
-			System.out.println(lengthOfLongestSubstring("dvdf"));
-			System.out.println(lengthOfLongestSubstring("asjrgapa"));
-			
-			
-			
-
-		}
+//			
+//			
+//
+//		}
 
 }
