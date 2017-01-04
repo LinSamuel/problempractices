@@ -187,64 +187,53 @@ public class ValidSudoku {
     	System.out.println("end!");
     }
 
-	public static void main(String[] args) {
-//		HashMap<Integer, ArrayList<Integer>> SudokuMap = new HashMap<Integer, ArrayList<Integer>>();
-//		SudokuMap.put(0, new ArrayList<Integer>());
-//		SudokuMap.put(1, new ArrayList<Integer>());
-//		SudokuMap.get(0).add(2);
-//		printArrayList(SudokuMap.get(0));
-//		ArrayList<Integer> currentList = SudokuMap.get(1);
-//		currentList.add(5);
-//		printArrayList(SudokuMap.get(1));
-		//System.out.println('.' == '.');
-		
-		String[] input = {".87654321","2........","3........","4........","5........","6........","7........","8........","9........"};
-		String[] input2 = {"...9.....",".........","..3.....1",".........","1.....3..","....2.6..",".9.....7.",".........","8..8....."};
-
-		char[][] inputArray = new char[9][9];
-		for (int i = 0; i < input2.length; i++){
-			String currString = input2[i];
-			for (int j = 0; j < 9; j++){
-				inputArray[i][j] = currString.charAt(j);
-			}
-			
-		}
-		
-		System.out.println(isValidSudoku(inputArray));
-		
-//		char[] firstRow = new char[9];
-//		firstRow[0] = '.';
-//		firstRow[1] = '8';
-//		firstRow[2] = '7';
-//		firstRow[3] = '6';
-//		firstRow[4] = '5';
-//		firstRow[5] = '4';
-//		firstRow[6] = '3';
-//		firstRow[7] = '2';
-//		firstRow[8] = '1';
+//	public static void main(String[] args) {
+////		HashMap<Integer, ArrayList<Integer>> SudokuMap = new HashMap<Integer, ArrayList<Integer>>();
+////		SudokuMap.put(0, new ArrayList<Integer>());
+////		SudokuMap.put(1, new ArrayList<Integer>());
+////		SudokuMap.get(0).add(2);
+////		printArrayList(SudokuMap.get(0));
+////		ArrayList<Integer> currentList = SudokuMap.get(1);
+////		currentList.add(5);
+////		printArrayList(SudokuMap.get(1));
+//		//System.out.println('.' == '.');
 //		
-//		char[] secondRow = new char[9];
-//		secondRow[0] = '2';
-//		secondRow[1] = '.';
-//		secondRow[2] = '.';
-//		secondRow[3] = '.';
-//		secondRow[4] = '.';
-//		secondRow[5] = '.';
-//		secondRow[6] = '.';
-//		secondRow[7] = '.';
-//		secondRow[8] = '.';
+//		String[] input = {".87654321","2........","3........","4........","5........","6........","7........","8........","9........"};
+//		String[] input2 = {"...9.....",".........","..3.....1",".........","1.....3..","....2.6..",".9.....7.",".........","8..8....."};
+//
+//		char[][] inputArray = new char[9][9];
+//		for (int i = 0; i < input2.length; i++){
+//			String currString = input2[i];
+//			for (int j = 0; j < 9; j++){
+//				inputArray[i][j] = currString.charAt(j);
+//			}
+//			
+//		}
 //		
-//		char[] Row3 = new char[9];
-//		Row3[0] = '2';
-//		Row3[1] = '.';
-//		Row3[2] = '.';
-//		Row3[3] = '.';
-//		Row3[4] = '.';
-//		Row3[5] = '.';
-//		Row3[6] = '.';
-//		Row3[7] = '.';
-//		Row3[8] = '.';
+//		System.out.println(isValidSudoku(inputArray));
 //		
+////		char[] firstRow = new char[9];
+////		firstRow[0] = '.';
+////		firstRow[1] = '8';
+////		firstRow[2] = '7';
+////		firstRow[3] = '6';
+////		firstRow[4] = '5';
+////		firstRow[5] = '4';
+////		firstRow[6] = '3';
+////		firstRow[7] = '2';
+////		firstRow[8] = '1';
+////		
+////		char[] secondRow = new char[9];
+////		secondRow[0] = '2';
+////		secondRow[1] = '.';
+////		secondRow[2] = '.';
+////		secondRow[3] = '.';
+////		secondRow[4] = '.';
+////		secondRow[5] = '.';
+////		secondRow[6] = '.';
+////		secondRow[7] = '.';
+////		secondRow[8] = '.';
+////		
 ////		char[] Row3 = new char[9];
 ////		Row3[0] = '2';
 ////		Row3[1] = '.';
@@ -255,7 +244,18 @@ public class ValidSudoku {
 ////		Row3[6] = '.';
 ////		Row3[7] = '.';
 ////		Row3[8] = '.';
-
-	}
+////		
+//////		char[] Row3 = new char[9];
+//////		Row3[0] = '2';
+//////		Row3[1] = '.';
+//////		Row3[2] = '.';
+//////		Row3[3] = '.';
+//////		Row3[4] = '.';
+//////		Row3[5] = '.';
+//////		Row3[6] = '.';
+//////		Row3[7] = '.';
+//////		Row3[8] = '.';
+//
+//	}
 
 }
