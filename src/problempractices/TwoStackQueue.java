@@ -7,33 +7,31 @@ public class TwoStackQueue {
     public static class MyQueue<T> {
         Stack<T> stackNewestOnTop = new Stack<T>();
         Stack<T> stackOldestOnTop = new Stack<T>();
-
+        
+        T currentHead;
+        
         public void enqueue(T value) { // Push onto newest stack
             stackNewestOnTop.push(value);
         }
 
         public T peek() {
             while (!stackNewestOnTop.empty()){
-            	T currentElement = stackNewestOnTop.pop();
-            	stackOldestOnTop.push(currentElement);
+            	stackOldestOnTop.push(stackNewestOnTop.pop());
             }
         	T printThis = stackOldestOnTop.peek();
-        	while (!stackOldestOnTop.empty()){
-        		T currentElement = stackOldestOnTop.pop();
-        		stackNewestOnTop.push(currentElement);
+        	while (!stackOldestOnTop.empty()){     		
+        		stackNewestOnTop.push(stackOldestOnTop.pop());
         	}
         	return printThis;
         }
 
         public T dequeue() {
             while (!stackNewestOnTop.empty()){
-            	T currentElement = stackNewestOnTop.pop();
-            	stackOldestOnTop.push(currentElement);
+            	stackOldestOnTop.push(stackNewestOnTop.pop());
             }
         	T returnThis = stackOldestOnTop.pop();
         	while (!stackOldestOnTop.empty()){
-        		T currentElement = stackOldestOnTop.pop();
-        		stackNewestOnTop.push(currentElement);
+        		stackNewestOnTop.push(stackOldestOnTop.pop());
         	}
         	return returnThis;            
         }
