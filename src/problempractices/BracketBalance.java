@@ -10,11 +10,17 @@ import java.util.Stack;
 public class BracketBalance {
 
     public static boolean isBalanced(String expression) {
+    	if (expression.length() % 2 == 1) {
+    		return false;
+    	}
         Stack<String> bracketStack = new Stack<String>();
         for (int i = 0; i < expression.length(); i++){
         	if (expression.charAt(i) == '{' || expression.charAt(i) == '(' || expression.charAt(i) == '[' ){
         		bracketStack.push(String.valueOf(expression.charAt(i)));
         	} else {
+        		if (bracketStack.empty()){ //Unbalanced too
+        			return false;
+        		}
         		if (expression.charAt(i) == '}') {
         			if (!bracketStack.pop().equals("{")) {
         				return false;
@@ -30,7 +36,7 @@ public class BracketBalance {
         		}
         	}
         }
-    	return true;
+    	return bracketStack.empty();
     }
   
     public static void main(String[] args) {
