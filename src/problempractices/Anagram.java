@@ -9,7 +9,6 @@ public class Anagram {
 
     public static int numberNeeded(String first, String second) {
         HashMap<String, Integer> firstMap = new HashMap<String,Integer>();
-        //HashMap<String, Integer> secondMap = new HashMap<String, Integer>();
         
         for(char letter : first.toCharArray()){
         	if (firstMap.containsKey(String.valueOf(letter))){
@@ -36,12 +35,12 @@ public class Anagram {
     	return minMoves;
     }
   
-    public static void main(String[] args) {
-        Scanner in = new Scanner(System.in);
-        String a = in.next();
-        String b = in.next();
-        System.out.println(numberNeeded(a, b));
-        
-    }
+//    public static void main(String[] args) {
+//        Scanner in = new Scanner(System.in);
+//        String a = in.next();
+//        String b = in.next();
+//        System.out.println(numberNeeded(a, b));
+//        
+//    }
 
 }
