@@ -42,9 +42,9 @@ public class isBST {
     	}
     }
     
-	public static void main(String[] args) {
-		return;
-
-	}
+//	public static void main(String[] args) {
+//		return;
+//
+//	}
 
 }
