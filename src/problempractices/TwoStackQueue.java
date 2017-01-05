@@ -11,18 +11,14 @@ public class TwoStackQueue {
         T currentHead;
         
         public void enqueue(T value) { // Push onto newest stack
+        	if (stackNewestOnTop.empty()){
+        		currentHead = value;
+        	}
             stackNewestOnTop.push(value);
         }
 
         public T peek() {
-            while (!stackNewestOnTop.empty()){
-            	stackOldestOnTop.push(stackNewestOnTop.pop());
-            }
-        	T printThis = stackOldestOnTop.peek();
-        	while (!stackOldestOnTop.empty()){     		
-        		stackNewestOnTop.push(stackOldestOnTop.pop());
-        	}
-        	return printThis;
+            return currentHead;
         }
 
         public T dequeue() {
@@ -30,6 +26,11 @@ public class TwoStackQueue {
             	stackOldestOnTop.push(stackNewestOnTop.pop());
             }
         	T returnThis = stackOldestOnTop.pop();
+        	if (stackOldestOnTop.empty()){
+        		currentHead = null;
+        	} else {
+        		currentHead = stackOldestOnTop.peek();
+        	}    	
         	while (!stackOldestOnTop.empty()){
         		stackNewestOnTop.push(stackOldestOnTop.pop());
         	}
