@@ -8,33 +8,26 @@ public class TwoStackQueue {
         Stack<T> stackNewestOnTop = new Stack<T>();
         Stack<T> stackOldestOnTop = new Stack<T>();
         
-        T currentHead;
-        
         public void enqueue(T value) { // Push onto newest stack
-        	if (stackNewestOnTop.empty()){
-        		currentHead = value;
-        	}
             stackNewestOnTop.push(value);
         }
 
         public T peek() {
-            return currentHead;
+        	if (stackOldestOnTop.empty()){
+        		while (!stackNewestOnTop.empty()){
+                	stackOldestOnTop.push(stackNewestOnTop.pop());
+                }
+        	}
+        	return stackOldestOnTop.peek();
         }
 
         public T dequeue() {
-            while (!stackNewestOnTop.empty()){
-            	stackOldestOnTop.push(stackNewestOnTop.pop());
-            }
-        	T returnThis = stackOldestOnTop.pop();
         	if (stackOldestOnTop.empty()){
-        		currentHead = null;
-        	} else {
-        		currentHead = stackOldestOnTop.peek();
-        	}    	
-        	while (!stackOldestOnTop.empty()){
-        		stackNewestOnTop.push(stackOldestOnTop.pop());
+        		while (!stackNewestOnTop.empty()){
+                	stackOldestOnTop.push(stackNewestOnTop.pop());
+                }
         	}
-        	return returnThis;            
+        	return stackOldestOnTop.pop();         
         }
     }
 
