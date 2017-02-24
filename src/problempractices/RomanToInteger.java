@@ -4,8 +4,19 @@ import java.util.HashMap;
 
 public class RomanToInteger {
 	
-    public int romanToInt(String s) {
+	//Helper function that take in a string of length 2, returns true if the first character is less than the following character in roman numerals
+	public static boolean checkIfLess(String substr, HashMap<String,Integer> romanIndex){
+		String firstChar = String.valueOf(substr.charAt(0));
+		int firstIndex = romanIndex.get(firstChar);
+		String secondChar = String.valueOf(substr.charAt(1));
+		int secondIndex = romanIndex.get(secondChar);
+		return firstIndex < secondIndex;
+	}
+	
+    public static int romanToInt(String s) {
         //Guaranteed that the string input will be between 1-3999
+    	int finalAnswer = 0;
+    	
     	HashMap<String, Integer> romanMap = new HashMap<String,Integer>();
     	romanMap.put("I", 1);
     	romanMap.put("V", 5);
@@ -20,20 +31,20 @@ public class RomanToInteger {
     	int currentIndex = 0; //Start with M
     	
     	HashMap<String, Integer> romanIndex = new HashMap<String,Integer>();
-    	romanMap.put("I", 6);
-    	romanMap.put("V", 5);
-    	romanMap.put("X", 4);
+    	romanMap.put("I", 0);
+    	romanMap.put("V", 1);
+    	romanMap.put("X", 2);
     	romanMap.put("L", 3);
-    	romanMap.put("C", 2);
-    	romanMap.put("D", 1);
-    	romanMap.put("M", 0);
+    	romanMap.put("C", 4);
+    	romanMap.put("D", 5);
+    	romanMap.put("M", 6);
     	
-    	String firstChar = String.valueOf(s.charAt(0))
+    	String firstChar = String.valueOf(s.charAt(0));
     	
     	int firstIndex = romanIndex.get(firstChar); //get first character index.
     	
     	//check if the succeeding character is greater than the first Roman numeral or not
-    	first.get
+    	
     	
     	return 0;
     }
