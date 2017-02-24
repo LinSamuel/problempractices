@@ -1,7 +1,9 @@
 package problempractices;
 
 public class ListNode {
-	int value;
-    ListNode next;
-    ListNode(int x) { value = x; }
+	//int value;
+    //int val;
+	public ListNode next;
+	public int val;
+    public ListNode(int x) { val = x; }
 }

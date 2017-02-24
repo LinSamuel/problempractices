@@ -28,7 +28,6 @@ public class LongestIncreasingSubstring {
 	}
 
 	public static void main(String[] args) {
-		System.out.println("Hi");
         /* Enter your code here. Read input from STDIN. Print output to STDOUT. Your class should be named Solution. */
         Scanner scan = new Scanner(System.in);
         int n = scan.nextInt();
@@ -45,22 +44,13 @@ public class LongestIncreasingSubstring {
                 continue;
             }
             for(int j = 0; j < i; j++){
-            	System.out.println(" i is " + i + " j is " + j + " and list is: ");
-            	printArray(newList);
                 if( (intArray[i] > intArray[j]) && (intMatrix.get(j).size() + 1 > newList.size())) {
-                	System.out.println("if loop passed");
                 	ArrayList<Integer> addingOnList = new ArrayList<Integer>(intMatrix.get(j));
-                	System.out.println("newlist upgrade=========");
-                	printArray(addingOnList);
                     newList = addingOnList;
-                    System.out.println("=");
                 }
             }
             newList.add(intArray[i]);
-            System.out.println("adding to matrix....");
-            printArray(newList);
             intMatrix.add(newList); 
-            printMatrix(intMatrix);
         }
         int longest = 0;
         for(int i = 0; i < intMatrix.size(); i++){

@@ -77,88 +77,88 @@ public class InitialCommit {
 	        return finalArray;
 	    }
 	    
-	    public static ListNode addTwoNumbers(ListNode l1, ListNode l2) {
-	        ListNode finalListNode = null;
-	        ListNode head = null;
-	        boolean carryDigit = false;
-	        while(l1 != null || l2 != null){
-	        	
-	        	if(l2 == null){
-	            	int digitSum = 0;
-	            	if (carryDigit){
-	            		digitSum++;
-	            		carryDigit = false;
-	            	}
-	            	if (l1.value == 9){
-	            		digitSum = 0;
-	            		carryDigit = true;
-	            	} else{
-	            		digitSum += l1.value;
-	            	}        	
-	            	if (finalListNode == null){
-	            		finalListNode = new ListNode(digitSum);
-	            		head = finalListNode;
-	            	} else {
-	            		finalListNode.next = new ListNode(digitSum);
-	                	finalListNode = finalListNode.next;
-	            	}
-	            	l1 = l1.next;
-	            	if (l1 == null && l2 == null && carryDigit){
-	            		finalListNode.next = new ListNode(1);
-	            	}
-	        	} else if (l1 == null){
-	            	int digitSum = 0;
-	            	if (carryDigit){
-	            		digitSum++;
-	            		carryDigit = false;
-	            	}
-	            	if (l2.value + digitSum > 9){
-	            		digitSum = 0;
-	            		carryDigit = true;
-	            	} else{
-	            		digitSum += l2.value;
-	            	}        	
-	            	if (finalListNode == null){
-	            		finalListNode = new ListNode(digitSum);
-	            		head = finalListNode;
-	            	} else {
-	            		finalListNode.next = new ListNode(digitSum);
-	                	finalListNode = finalListNode.next;
-	            	}
-	            	l2 = l2.next;
-	            	if (l1 == null && l2 == null && carryDigit){
-	            		finalListNode.next = new ListNode(1);
-	            	}
-	        	} else {
-	            	int digitSum = 0;
-	            	if (carryDigit){
-	            		digitSum++;
-	            		carryDigit = false;
-	            	}
-	            	if ((l1.value + l2.value + digitSum) > 9){
-	            		digitSum = (l1.value + l2.value + digitSum) % 10;
-	            		carryDigit = true;
-	            	} else{
-	            		digitSum += l1.value + l2.value;
-	            	}        	
-	            	if (finalListNode == null){
-	            		finalListNode = new ListNode(digitSum);
-	            		head = finalListNode;
-	            	} else {
-	            		finalListNode.next = new ListNode(digitSum);
-	                	finalListNode = finalListNode.next;
-	            	}
-	            	
-	            	l1 = l1.next;
-	            	l2 = l2.next;
-	            	if (l1 == null && l2 == null && carryDigit){
-	            		finalListNode.next = new ListNode(1);
-	            	}
-	        	}
-
-	        }
-	        return head;
-	    }
+//	    public static ListNode addTwoNumbers(ListNode l1, ListNode l2) {
+//	        ListNode finalListNode = null;
+//	        ListNode head = null;
+//	        boolean carryDigit = false;
+//	        while(l1 != null || l2 != null){
+//	        	
+//	        	if(l2 == null){
+//	            	int digitSum = 0;
+//	            	if (carryDigit){
+//	            		digitSum++;
+//	            		carryDigit = false;
+//	            	}
+//	            	if (l1.value == 9){
+//	            		digitSum = 0;
+//	            		carryDigit = true;
+//	            	} else{
+//	            		digitSum += l1.value;
+//	            	}        	
+//	            	if (finalListNode == null){
+//	            		finalListNode = new ListNode(digitSum);
+//	            		head = finalListNode;
+//	            	} else {
+//	            		finalListNode.next = new ListNode(digitSum);
+//	                	finalListNode = finalListNode.next;
+//	            	}
+//	            	l1 = l1.next;
+//	            	if (l1 == null && l2 == null && carryDigit){
+//	            		finalListNode.next = new ListNode(1);
+//	            	}
+//	        	} else if (l1 == null){
+//	            	int digitSum = 0;
+//	            	if (carryDigit){
+//	            		digitSum++;
+//	            		carryDigit = false;
+//	            	}
+//	            	if (l2.value + digitSum > 9){
+//	            		digitSum = 0;
+//	            		carryDigit = true;
+//	            	} else{
+//	            		digitSum += l2.value;
+//	            	}        	
+//	            	if (finalListNode == null){
+//	            		finalListNode = new ListNode(digitSum);
+//	            		head = finalListNode;
+//	            	} else {
+//	            		finalListNode.next = new ListNode(digitSum);
+//	                	finalListNode = finalListNode.next;
+//	            	}
+//	            	l2 = l2.next;
+//	            	if (l1 == null && l2 == null && carryDigit){
+//	            		finalListNode.next = new ListNode(1);
+//	            	}
+//	        	} else {
+//	            	int digitSum = 0;
+//	            	if (carryDigit){
+//	            		digitSum++;
+//	            		carryDigit = false;
+//	            	}
+//	            	if ((l1.value + l2.value + digitSum) > 9){
+//	            		digitSum = (l1.value + l2.value + digitSum) % 10;
+//	            		carryDigit = true;
+//	            	} else{
+//	            		digitSum += l1.value + l2.value;
+//	            	}        	
+//	            	if (finalListNode == null){
+//	            		finalListNode = new ListNode(digitSum);
+//	            		head = finalListNode;
+//	            	} else {
+//	            		finalListNode.next = new ListNode(digitSum);
+//	                	finalListNode = finalListNode.next;
+//	            	}
+//	            	
+//	            	l1 = l1.next;
+//	            	l2 = l2.next;
+//	            	if (l1 == null && l2 == null && carryDigit){
+//	            		finalListNode.next = new ListNode(1);
+//	            	}
+//	        	}
+//
+//	        }
+//	        return head;
+//	    }
 	    
 	    public static int lengthOfLongestSubstring(String s) {
 	    	int longestLength = -1;
