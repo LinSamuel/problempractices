@@ -14,7 +14,7 @@ public class RomanToInteger {
 	}
 	
     public static int romanToInt(String s) {
-        //Guaranteed that the string input will be between 1-3999
+        //Guaranteed that the string input will be valid roman numerals between 1-3999
     	int finalAnswer = 0;
     	
     	HashMap<String, Integer> romanMap = new HashMap<String,Integer>();
@@ -31,25 +31,30 @@ public class RomanToInteger {
     	int currentIndex = 0; //Start with M
     	
     	HashMap<String, Integer> romanIndex = new HashMap<String,Integer>();
-    	romanMap.put("I", 0);
-    	romanMap.put("V", 1);
-    	romanMap.put("X", 2);
-    	romanMap.put("L", 3);
-    	romanMap.put("C", 4);
-    	romanMap.put("D", 5);
-    	romanMap.put("M", 6);
-    	
-    	String firstChar = String.valueOf(s.charAt(0));
-    	
-    	int firstIndex = romanIndex.get(firstChar); //get first character index.
+    	romanIndex.put("I", 0);
+    	romanIndex.put("V", 1);
+    	romanIndex.put("X", 2);
+    	romanIndex.put("L", 3);
+    	romanIndex.put("C", 4);
+    	romanIndex.put("D", 5);
+    	romanIndex.put("M", 6);
     	
     	//check if the succeeding character is greater than the first Roman numeral or not
-    	
-    	
-    	return 0;
+    	for(int i = 0; i < s.length(); i++){
+    		//first check if current char is less than following character
+    		String currentChar = String.valueOf(s.charAt(i));
+    		if((i+1) < s.length() && checkIfLess(s.substring(i, i+2), romanIndex)){
+    			finalAnswer += romanMap.get(String.valueOf(s.charAt(i + 1))) - romanMap.get(currentChar);
+    			//skip 2 indeces
+    			i++;
+    		} else {
+    			finalAnswer += romanMap.get(currentChar);
+    		}
+    	}	 	
+    	return finalAnswer;
     }
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
+		System.out.println(romanToInt("CDV"));
 
 	}
 
