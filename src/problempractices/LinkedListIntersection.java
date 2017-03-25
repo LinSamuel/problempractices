@@ -234,6 +234,41 @@ public class LinkedListIntersection {
     	return head;
     }
     
+    public static ListNode mergeTwoList(ListNode l1, ListNode l2){
+    	ListNode finalHead;
+    	if(l1 == null && l2 == null){
+    		return null;
+    	}
+    	if(l1 == null && l2 != null){
+    		return l2;
+    	}
+    	if(l2 == null && l1 != null){
+    		return l1;
+    	}
+    	if(l1.val <= l2.val){
+    		finalHead = l1;
+    		l1 = l1.next;
+    	} else {
+    		finalHead = l2;
+    		l2 = l2.next;
+    	}
+    	ListNode curr = finalHead;
+    	while(l1 != null && l2 != null){
+    		//curr.next = (l1.val < l2.val) ? l1 : l2;
+        	if(l1.val <= l2.val){
+        		curr.next = l1;
+        		l1 = l1.next;
+        	} else {
+        		curr.next = l2;
+        		l2 = l2.next;
+        	}
+        	curr = curr.next;
+    	}
+    	curr.next = (l1 == null) ? l2 : l1;
+    	
+    	return finalHead;
+    }
+    
     
 
 	public static void main(String[] args) {
@@ -274,11 +309,11 @@ public class LinkedListIntersection {
 ////		System.out.println(isPalindrome(result));
 //		System.out.println(detectCycle(node1).val);
 		
-		ListNode node1 = new ListNode(1);
-		ListNode node2 = new ListNode(2);
-		ListNode node3 = new ListNode(3);
-		ListNode node4 = new ListNode(4);
-		ListNode node5 = new ListNode(5);
+		ListNode node1 = new ListNode(2);
+		ListNode node2 = new ListNode(3);
+		ListNode node3 = new ListNode(4);
+		ListNode node4 = new ListNode(5);
+		ListNode node5 = new ListNode(7);
 		
 		node1.next = node2;
 		
@@ -288,8 +323,24 @@ public class LinkedListIntersection {
 
 		//printLinkedList(node1);
 		
-		printLinkedList(reverseBetween(node1, 2, 5));
+		//printLinkedList(reverseBetween(node1, 2, 5));
 		//printLinkedList(node1);
+		
+		ListNode node1x = new ListNode(2);
+		ListNode node2x = new ListNode(6);
+		ListNode node3x = new ListNode(9);
+		ListNode node4x = new ListNode(22);
+		ListNode node5x = new ListNode(25);
+		
+		node1x.next = node2x;
+		
+		node2x.next = node3x;
+		node3x.next = node4x;
+		node4x.next = node5x;
+		
+		printLinkedList(mergeTwoList(node1, node1x));
+		
+		////
 	}
 
 }
